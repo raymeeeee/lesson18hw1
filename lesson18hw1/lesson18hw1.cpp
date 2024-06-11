@@ -1,4 +1,5 @@
 #include <iostream>
+using namespace std;
 
 struct Worker {
 
@@ -8,6 +9,13 @@ struct Worker {
     double salary = 0;
     char education[50] = "";
 
+    void showWorker(){
+        cout << surname << endl;
+        cout << birthdate << endl;
+        cout << position << endl;
+        cout << salary << endl;
+        cout << education << endl << endl;
+    }
 };
 
 int main()
@@ -20,4 +28,13 @@ int main()
         {"Melnik", 1969, "Secretary", 60000, "Higher"},
         {"Pivovarov", 1980, "Manager", 80000, "Higher"}
     };
+
+    int ageSixty = 0;
+    for (int i = 0; i < size; i++)
+    {
+        if ((2024 - arr[i].birthdate) > 60) {
+            ageSixty++;
+            arr[i].showWorker();
+        }
+    }
 }
